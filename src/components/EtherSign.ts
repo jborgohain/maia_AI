@@ -30,7 +30,7 @@ async function SignSession(markdownContent: string): Promise<void> {
 
   // Send the payload to the Netlify function
   try {
-    const response = await fetch('/.netlify/functions/ether-sign', {
+    const response = await fetch('/.vercel/functions/ether-sign', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
