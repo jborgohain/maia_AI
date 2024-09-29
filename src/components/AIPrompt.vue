@@ -281,7 +281,7 @@ const sendQuery = () => {
     role: 'user',
     content: formState.currentQuery || ''
   }
-  postData('/.netlify/functions/ai-chat', {
+  postData('/.vercel/functions/ai-chat', {
     chatHistory: chatHistory.value,
     newValue: formState.currentQuery
   }).then((data) => {
@@ -328,7 +328,7 @@ async function uploadFile(e: Event) {
   formData.append('chatHistory', JSON.stringify(chatHistory.value))
 
   try {
-    const response = (await fetch('/.netlify/functions/ai-chat', {
+    const response = (await fetch('/.vercel/functions/ai-chat', {
       method: 'POST',
       body: formData
     })) as Response
